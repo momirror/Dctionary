@@ -136,8 +136,7 @@ return "help.html";
 	 	var url = "http://fanyi.youdao.com/openapi.do?keyfrom=momirror&key=357484575&type=data&doctype=json&version=1.1&q=" + word;
 	 	 $http.get(url)
     .success(function(response) {
-             var basic = response["basic"];
-             parseData.parseJson(basic);
+             parseData.parseJson(response);
 //             alert(basic);
 //             httpParse.parse(data);
     	$scope.searchText = response.transiation[0];})
