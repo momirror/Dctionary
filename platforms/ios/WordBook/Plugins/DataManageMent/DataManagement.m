@@ -132,7 +132,19 @@ static DataManagement * insance = nil;
     NSError* error=nil;
     NSMutableArray* mutableFetchResult=[[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     
-    return (mutableFetchResult != nil && [mutableFetchResult count] > 0);
+    for (WordEntity* item in mutableFetchResult) {
+        
+        if([item.word isEqualToString:word])
+        {
+            return YES;
+        }
+        
+        NSLog(@"word:%@",item.word);
+        NSLog(@"transition:%@",[[NSString alloc] initWithData:item.translate encoding:NSUTF8StringEncoding]);
+    }
+
+    
+    return NO;
 }
 
 //查询
@@ -171,9 +183,11 @@ static DataManagement * insance = nil;
     if (mutableFetchResult==nil) {
         NSLog(@"Error:%@",error);
     }
-    NSLog(@"The count of entry: %i",[mutableFetchResult count]);
+
     for (WordEntity* item in mutableFetchResult) {
         NSLog(@"word:%@",item.word);
+        NSLog(@"usphonetic:%@",item.usphonetic);
+        NSLog(@"ukphonetic:%@",item.ukphonetic);
         NSLog(@"transition:%@",[[NSString alloc] initWithData:item.translate encoding:NSUTF8StringEncoding]);
     }
     

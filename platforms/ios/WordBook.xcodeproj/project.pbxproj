@@ -102,10 +102,10 @@
 		722876BE1C8875130091F8C9 /* DataManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManagement.h; sourceTree = "<group>"; };
 		722876BF1C8875130091F8C9 /* DataManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManagement.m; sourceTree = "<group>"; };
 		722876C81C8875D90091F8C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		722876D01C8877830091F8C9 /* WordEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WordEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		722876D11C8877830091F8C9 /* WordEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WordEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		722876D21C8877830091F8C9 /* WordEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordEntity.h; sourceTree = "<group>"; };
-		722876D31C8877840091F8C9 /* WordEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordEntity.m; sourceTree = "<group>"; };
+		722876D01C8877830091F8C9 /* WordEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WordEntity+CoreDataProperties.h"; path = "../../../WordEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		722876D11C8877830091F8C9 /* WordEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WordEntity+CoreDataProperties.m"; path = "../../../WordEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		722876D21C8877830091F8C9 /* WordEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordEntity.h; path = ../../../WordEntity.h; sourceTree = "<group>"; };
+		722876D31C8877840091F8C9 /* WordEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordEntity.m; path = ../../../WordEntity.m; sourceTree = "<group>"; };
 		7264F2C51C3F2B5900FB639A /* ParseHttpResultPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseHttpResultPlugin.h; sourceTree = "<group>"; };
 		7264F2C61C3F2B5900FB639A /* ParseHttpResultPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHttpResultPlugin.m; sourceTree = "<group>"; };
 		72D64B121C83020600693AC0 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
@@ -171,10 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				72D64B151C8332EC00693AC0 /* Word.xcdatamodeld */,
-				722876D01C8877830091F8C9 /* WordEntity+CoreDataProperties.h */,
-				722876D11C8877830091F8C9 /* WordEntity+CoreDataProperties.m */,
-				722876D21C8877830091F8C9 /* WordEntity.h */,
-				722876D31C8877840091F8C9 /* WordEntity.m */,
 				722876BB1C8874FA0091F8C9 /* Data */,
 				72D64B111C83020600693AC0 /* Common */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
@@ -286,6 +282,10 @@
 		722876BB1C8874FA0091F8C9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				722876D01C8877830091F8C9 /* WordEntity+CoreDataProperties.h */,
+				722876D11C8877830091F8C9 /* WordEntity+CoreDataProperties.m */,
+				722876D21C8877830091F8C9 /* WordEntity.h */,
+				722876D31C8877840091F8C9 /* WordEntity.m */,
 				722876BC1C8875130091F8C9 /* Word.h */,
 				722876BD1C8875130091F8C9 /* Word.m */,
 				722876BE1C8875130091F8C9 /* DataManagement.h */,
