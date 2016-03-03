@@ -1,0 +1,13 @@
+	
+<ion-view view-title="设置">
+	<ion-content class="has-header has-footer">
+		<ion-list ng-controller="setController">
+			<ion-item class="item-icon-right" collection-repeat="item in items" ui-sref="tabs.setDetail({index:$index})">
+				{{item}}
+				<button class="button button-clear ion ion-ios-arrow-right">
+				</button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
+	
