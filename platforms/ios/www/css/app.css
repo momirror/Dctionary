@@ -6,3 +6,17 @@
 .mainTitle {
 	color: deepskyblue;
 }
+
+.search_button {
+    width:200px;
+    height:40px;
+}
+
+/*水平居中*/
+.h-center {
+    text-align:center;
+}
+
+.error {
+    color:red;
+}

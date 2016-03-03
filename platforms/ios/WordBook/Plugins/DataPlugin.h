@@ -9,5 +9,6 @@
 #import <Cordova/CDVPlugin.h>
 
 @interface DataPlugin : CDVPlugin
-- (void)parseData:(CDVInvokedUrlCommand*)commard;
+- (void)parseData:(CDVInvokedUrlCommand*)command;
+- (void)getAllData:(CDVInvokedUrlCommand*)comand;
 @end

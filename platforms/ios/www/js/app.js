@@ -133,6 +133,17 @@ return "help.html";
 	 
 	 $scope.searchWord=function(word)
 	 {
+        if(word == undefined)
+        {
+            $scope.NoInput = "false";
+            
+            return;
+        }
+        else
+        {
+            $scope.NoInput = "true";
+        }
+            
 	 	var url = "http://fanyi.youdao.com/openapi.do?keyfrom=momirror&key=357484575&type=data&doctype=json&version=1.1&q=" + word;
 	 	 $http.get(url)
     .success(function(response) {

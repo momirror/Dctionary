@@ -13,9 +13,9 @@
 
 @implementation DataPlugin
 
-- (void)parseData:(CDVInvokedUrlCommand*)commard
+- (void)parseData:(CDVInvokedUrlCommand*)command
 {
-    NSDictionary * dic = commard.arguments[0];
+    NSDictionary * dic = command.arguments[0];
     NSDictionary * basic = dic[@"basic"];
     NSLog(@"%@",[Global convertUnicodeToUTF8:[dic description]]);
     NSArray * translate = basic[@"explains"];
@@ -29,6 +29,11 @@
     NSLog(@"%@",[[NSString alloc] initWithData:word.translate encoding:NSUTF8StringEncoding]);
     
     [[DataManagement instance] addIntoDataSource:word];
+    
+}
+
+- (void)getAllData:(CDVInvokedUrlCommand *)comand
+{
     
 }
 
