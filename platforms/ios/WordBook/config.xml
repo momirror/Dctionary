@@ -20,8 +20,8 @@
         <param name="ios-package" value="CDVLogger" />
     </feature>
     
-    <feature name="ParseHttpResultPlugin">
-        <param name="ios-package" value="ParseHttpResultPlugin" />
+    <feature name="DataPlugin">
+        <param name="ios-package" value="DataPlugin" />
     </feature>
     
     <allow-intent href="itms:*" />

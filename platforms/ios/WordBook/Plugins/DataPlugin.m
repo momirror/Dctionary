@@ -1,17 +1,17 @@
 //
-//  ParseHttpResultPlugin.m
+//  DataPlugin.m
 //  HelloCordova
 //
 //  Created by msp on 16/1/8.
 //
 //
 
-#import "ParseHttpResultPlugin.h"
+#import "DataPlugin.h"
 #import "Global.h"
 #import "DataManagement.h"
 
 
-@implementation ParseHttpResultPlugin
+@implementation DataPlugin
 
 - (void)parseData:(CDVInvokedUrlCommand*)commard
 {

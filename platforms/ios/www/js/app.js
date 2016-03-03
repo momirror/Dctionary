@@ -109,7 +109,7 @@ return "help.html";
   this.parseJson=function(jsonData)
          {
             var exec = cordova.require('cordova/exec');
-            exec(null,null,"ParseHttpResultPlugin","parseData",[jsonData]);
+            exec(null,null,"DataPlugin","parseData",[jsonData]);
          }
 })
 
