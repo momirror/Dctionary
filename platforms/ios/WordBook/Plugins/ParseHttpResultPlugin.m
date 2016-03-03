@@ -20,10 +20,13 @@
     NSLog(@"%@",[Global convertUnicodeToUTF8:[dic description]]);
     NSArray * translate = basic[@"explains"];
     Word * word = [[Word alloc] init];
+    NSLog(@"%@",[translate description] );
     word.translate = [[translate description] dataUsingEncoding:NSUTF8StringEncoding];
     word.usphonetic = basic[@"us-phonetic"];
     word.ukphonetic = basic[@"uk-phonetic"];
     word.word = dic[@"query"];
+    
+    NSLog(@"%@",[[NSString alloc] initWithData:word.translate encoding:NSUTF8StringEncoding]);
     
     [[DataManagement instance] addIntoDataSource:word];
     

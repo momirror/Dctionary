@@ -7,6 +7,7 @@
 //
 
 #import "DataManagement.h"
+#import "Global.h"
 
 static DataManagement * insance = nil;
 
@@ -103,11 +104,12 @@ static DataManagement * insance = nil;
     else
     {
     
-        WordEntity* user=(WordEntity *)[NSEntityDescription insertNewObjectForEntityForName:@"WordEntity" inManagedObjectContext:self.managedObjectContext];
-        [user setWord:item.word];
-        //    [user setAge:[NSNumber numberWithInteger:[_ageText.text integerValue]]];
-        //    [user setSex:_sexText.text];
-        NSLog(@"%@",user.word);
+        WordEntity* entiry = (WordEntity *)[NSEntityDescription insertNewObjectForEntityForName:@"WordEntity" inManagedObjectContext:self.managedObjectContext];
+        [entiry setWord:item.word];
+        [entiry setUkphonetic:item.ukphonetic];
+        [entiry setUsphonetic:item.usphonetic];
+        [entiry setTranslate:item.translate];
+        
         NSError* error;
         BOOL isSaveSuccess=[_managedObjectContext save:&error];
         if (!isSaveSuccess) {
@@ -175,8 +177,8 @@ static DataManagement * insance = nil;
 //查询
 - (void)queryAllData{
     NSFetchRequest* request=[[NSFetchRequest alloc] init];
-    NSEntityDescription* item=[NSEntityDescription entityForName:@"WordEntity" inManagedObjectContext:self.managedObjectContext];
-    [request setEntity:item];
+    NSEntityDescription* entiry=[NSEntityDescription entityForName:@"WordEntity" inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entiry];
     
     NSError* error=nil;
     NSMutableArray* mutableFetchResult=[[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
@@ -188,7 +190,7 @@ static DataManagement * insance = nil;
         NSLog(@"word:%@",item.word);
         NSLog(@"usphonetic:%@",item.usphonetic);
         NSLog(@"ukphonetic:%@",item.ukphonetic);
-        NSLog(@"transition:%@",[[NSString alloc] initWithData:item.translate encoding:NSUTF8StringEncoding]);
+        NSLog(@"transition:%@",[Global convertUnicodeToUTF8:[[NSString alloc] initWithData:item.translate encoding:NSUTF8StringEncoding]]);
     }
     
     

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordBook/Plugins/DataManageMent/DataManagement.m"
-            timestampString = "478706685.957481"
+            timestampString = "478711937.914386"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "-queryAllData"
             landmarkType = "5">
          </BreakpointContent>
@@ -38,32 +38,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WordBook/Plugins/DataManageMent/DataManagement.m"
-            timestampString = "478705968.830862"
+            filePath = "WordBook/Plugins/ParseHttpResultPlugin.m"
+            timestampString = "478711775.197975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "-addIntoDataSource:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WordBook/Plugins/DataManageMent/DataManagement.m"
-            timestampString = "478706530.214478"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-isExist:"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-parseData:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
