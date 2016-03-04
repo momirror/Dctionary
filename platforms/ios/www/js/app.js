@@ -112,10 +112,31 @@ return "help.html";
             exec(null,null,"DataPlugin","parseData",[jsonData]);
          }
 })
+.service("getAllWord",function()
+{
+         this.getAllData=function()
+         {
+            var exec = cordova.require('cordova/exec');
+            exec(null,null,"DataPlugin","getAllData",[]);
+            return function(date);
+         }
+         
+         
+         //js
+//         DeviceInfoSvc.getInfo().then(function(data) {
+//                                      vm.configParams.deviceId = data.id;
 
-.controller("listController",function($scope,$rootScope,$http,parseData)
+//                                      });
+})
+
+.controller("listController",function($scope,$rootScope,$http,parseData,getAllWord)
 {
 //       parseData.parseJson("haha");
+            
+    getAllWord.getAllData().then(function(data) {
+
+                                         });
+            
 	var words = new Array();
 	
 	for(i = 1;i < 101;i++)

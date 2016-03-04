@@ -32,9 +32,17 @@
     
 }
 
-- (void)getAllData:(CDVInvokedUrlCommand *)comand
+- (void)getAllData:(CDVInvokedUrlCommand *)command
 {
     NSLog(@"getAllData");
+    
+    CDVPluginResult* result = nil;
+
+    NSDictionary * dicData = @{@"word":@"China",@"translate":@"中国"};
+    
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dicData];
+    
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
 @end
