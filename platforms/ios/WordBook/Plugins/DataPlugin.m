@@ -34,7 +34,7 @@
 
 - (void)getAllData:(CDVInvokedUrlCommand *)comand
 {
-    
+    NSLog(@"getAllData");
 }
 
 @end
