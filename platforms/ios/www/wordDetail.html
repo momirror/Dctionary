@@ -1,12 +1,11 @@
-<ion-view view-title={{wordIndex}}>
+<ion-view view-title={{words[wordIndex].word}}>
 	
-	<ion-nav-buttons side="right">
-		<button>更多</button>		
-	</ion-nav-buttons>
 	<ion-content class="has-header has-footer">
 
 	<!--<h1>wordIndex</h1>-->
-	<h1>{{wordIndex}}</h1>
+    <h1>美音:[{{words[wordIndex].usphonetic}}]</h1>
+    <h1>英音:[{{words[wordIndex].ukphonetic}}]</h1>
+    <p>翻译：{{words[wordIndex].translate}}</p>
 	
 
 </ion-view>

@@ -8,6 +8,7 @@
 
 #import "DataManagement.h"
 #import "Global.h"
+#import "PrintObject.h"
 
 static DataManagement * insance = nil;
 
@@ -108,7 +109,7 @@ static DataManagement * insance = nil;
         [entiry setWord:item.word];
         [entiry setUkphonetic:item.ukphonetic];
         [entiry setUsphonetic:item.usphonetic];
-        [entiry setTranslate:item.translate];
+        [entiry setTranslate:[item.translate dataUsingEncoding:NSUTF8StringEncoding]];
         
         NSError* error;
         BOOL isSaveSuccess=[_managedObjectContext save:&error];
@@ -164,7 +165,7 @@ static DataManagement * insance = nil;
     if (mutableFetchResult==nil) {
         NSLog(@"Error:%@",error);
     }
-    NSLog(@"The count of entry: %i",[mutableFetchResult count]);
+ 
     for (WordEntity* item in mutableFetchResult) {
         NSLog(@"word:%@",item.word);
         NSLog(@"transition:%@",[[NSString alloc] initWithData:item.translate encoding:NSUTF8StringEncoding]);
@@ -175,7 +176,8 @@ static DataManagement * insance = nil;
 }
 
 //查询
-- (void)queryAllData{
+- (NSArray*)queryAllData
+{
     NSFetchRequest* request=[[NSFetchRequest alloc] init];
     NSEntityDescription* entiry=[NSEntityDescription entityForName:@"WordEntity" inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entiry];
@@ -186,14 +188,25 @@ static DataManagement * insance = nil;
         NSLog(@"Error:%@",error);
     }
 
+    NSMutableArray * datas = [NSMutableArray array];
+    
     for (WordEntity* item in mutableFetchResult) {
         NSLog(@"word:%@",item.word);
         NSLog(@"usphonetic:%@",item.usphonetic);
         NSLog(@"ukphonetic:%@",item.ukphonetic);
         NSLog(@"transition:%@",[Global convertUnicodeToUTF8:[[NSString alloc] initWithData:item.translate encoding:NSUTF8StringEncoding]]);
+        Word * word = [[Word alloc] init];
+        word.word = item.word;
+        word.ukphonetic = item.ukphonetic;
+        word.usphonetic = item.usphonetic;
+        word.translate = [Global convertUnicodeToUTF8:[[NSString alloc] initWithData:item.translate encoding:NSUTF8StringEncoding]] ;
+        
+        NSDictionary * dic = [PrintObject getObjectData:word];
+        
+        [datas addObject:dic];
     }
     
-    
+    return datas;
 }
 //更新
 - (BOOL)update:(Word*)item {
@@ -208,10 +221,12 @@ static DataManagement * insance = nil;
     if (mutableFetchResult==nil) {
         NSLog(@"Error:%@",error);
     }
-    NSLog(@"The count of entry: %i",[mutableFetchResult count]);
+
     //更新age后要进行保存，否则没更新
     for (WordEntity* word in mutableFetchResult) {
-        [word setTranslate:item.translate];
+        [word setUkphonetic:item.ukphonetic];
+        [word setUsphonetic:item.usphonetic];
+        [word setTranslate:[item.translate dataUsingEncoding:NSUTF8StringEncoding]];
         
     }
     [_managedObjectContext save:&error];

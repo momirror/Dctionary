@@ -40,7 +40,12 @@
 
     NSDictionary * dicData = @{@"word":@"China",@"translate":@"中国"};
     
-    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dicData];
+    NSArray * datas = [[DataManagement instance] queryAllData];
+//    NSArray * datas = @[@"1",@"2",@"3"];
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsArray:datas];
+    
+//    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dicData];
+    NSLog(@"%@",result.status);
     
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }

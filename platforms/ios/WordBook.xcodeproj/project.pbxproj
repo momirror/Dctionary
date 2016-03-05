@@ -35,6 +35,7 @@
 		722876D41C8877840091F8C9 /* WordEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 722876D11C8877830091F8C9 /* WordEntity+CoreDataProperties.m */; };
 		722876D51C8877840091F8C9 /* WordEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 722876D31C8877840091F8C9 /* WordEntity.m */; };
 		7264F2C71C3F2B5900FB639A /* DataPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7264F2C61C3F2B5900FB639A /* DataPlugin.m */; };
+		7265F2A81C8A9F4000762615 /* PrintObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7265F2A71C8A9F4000762615 /* PrintObject.m */; };
 		72D64B141C83020600693AC0 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D64B131C83020600693AC0 /* Global.m */; };
 		72D64B171C8332EC00693AC0 /* Word.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72D64B151C8332EC00693AC0 /* Word.xcdatamodeld */; };
 		7E7966DE1810823500FA85AD /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D41810823500FA85AD /* icon-40.png */; };
@@ -108,6 +109,8 @@
 		722876D31C8877840091F8C9 /* WordEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordEntity.m; path = ../../../WordEntity.m; sourceTree = "<group>"; };
 		7264F2C51C3F2B5900FB639A /* DataPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPlugin.h; sourceTree = "<group>"; };
 		7264F2C61C3F2B5900FB639A /* DataPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPlugin.m; sourceTree = "<group>"; };
+		7265F2A61C8A9F4000762615 /* PrintObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintObject.h; sourceTree = "<group>"; };
+		7265F2A71C8A9F4000762615 /* PrintObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintObject.m; sourceTree = "<group>"; };
 		72D64B121C83020600693AC0 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		72D64B131C83020600693AC0 /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
 		72D64B161C8332EC00693AC0 /* Word.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Word.xcdatamodel; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				7265F2A61C8A9F4000762615 /* PrintObject.h */,
+				7265F2A71C8A9F4000762615 /* PrintObject.m */,
 				72D64B151C8332EC00693AC0 /* Word.xcdatamodeld */,
 				722876BB1C8874FA0091F8C9 /* Data */,
 				72D64B111C83020600693AC0 /* Common */,
@@ -449,6 +454,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				722876D41C8877840091F8C9 /* WordEntity+CoreDataProperties.m in Sources */,
 				722876C01C8875130091F8C9 /* Word.m in Sources */,
+				7265F2A81C8A9F4000762615 /* PrintObject.m in Sources */,
 				7264F2C71C3F2B5900FB639A /* DataPlugin.m in Sources */,
 				722876D51C8877840091F8C9 /* WordEntity.m in Sources */,
 				85F6A4B4C7E44D1499991CF7 /* CDVLogger.m in Sources */,

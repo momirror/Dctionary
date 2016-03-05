@@ -25,4 +25,5 @@
 - (BOOL)update:(Word*)item;
 - (BOOL)del:(Word*)item;
 - (BOOL)isExist:(NSString*)word;
+- (NSArray*)queryAllData;
 @end

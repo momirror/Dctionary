@@ -112,14 +112,30 @@ return "help.html";
             exec(null,null,"DataPlugin","parseData",[jsonData]);
          }
 })
-.service("getAllWord",function()
+.service("getAllWord",function($q)
 {
+         
+         
          this.getAllData=function()
          {
+          var defer = $q.defer();
+         
             var exec = cordova.require('cordova/exec');
-            exec(null,null,"DataPlugin","getAllData",[]);
-            return function(date);
+            exec(function(data){
+//                 alert("aaaa");
+                 defer.resolve(data);
+                 },function(){
+                 alert("error");
+                 },"DataPlugin","getAllData",[]);
+         
+        
+         
+         
+         
+         return defer.promise;
          }
+         
+
          
          
          //js
@@ -133,18 +149,30 @@ return "help.html";
 {
 //       parseData.parseJson("haha");
             
-    getAllWord.getAllData().then(function(data) {
-
+            getAllWord.getAllData().then(function(data){
+                                         var wordDatas = data;
+                                         
+//                                         alert(data.length);
+                                         
+//                                         for(i = 0;i < data.length;i++)
+//                                         {
+//                                         
+//                                         var word = data[i];
+//                                            alert(word.word);
+//                                         
+//                                         }
+                                         
+                                         $scope.words = data;
                                          });
             
-	var words = new Array();
-	
-	for(i = 1;i < 101;i++)
-	{
-		words.push(i);
-	}
-	
-	 $scope.words = words;
+//	var words = new Array();
+//	
+//	for(i = 1;i < 101;i++)
+//	{
+//		words.push(i);
+//	}
+//	
+//	 $scope.words = words;
 	 
 	 $scope.items=["导入生词","帮助"];
 	 

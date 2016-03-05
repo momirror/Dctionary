@@ -12,5 +12,5 @@
 @property (nonatomic, retain) NSString *word;
 @property (nonatomic, retain) NSString *ukphonetic;
 @property (nonatomic, retain) NSString *usphonetic;
-@property (nonatomic, retain) NSData *translate;
+@property (nonatomic, retain) NSString *translate;
 @end
