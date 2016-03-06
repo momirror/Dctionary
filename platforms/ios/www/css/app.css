@@ -30,3 +30,11 @@ p
     margin-left:10px;
     margin-right:10px;
 }
+
+.top-margin {
+    margin-top:20px;
+}
+
+.right-margin-10 {
+    margin-right:10px;
+}

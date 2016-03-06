@@ -5,14 +5,24 @@
 			<label class="item item-input">
 				<i class="icon ion-search placeholder-icon"></i>
 				<input type="text" placeholder="搜索"  ng-model="searchText">
+                <button class="button button-clear icon ion-ios-close-empty right-margin-10" ng-click="clear()"></button>
 			</label>
 			
-            <p class="error" ng-show={{NoInput}}>请先输入一个英文单词</p>
-            
-			<h1>你搜索的英语单词是：{{searchText}}</h1>
+            <p class="error top-margin" ng-show="NoInput">请先输入一个英文单词</p>
 			
-			<button class="search_button" ng-click="searchWord(searchText)">搜索</button>
+			<button class="search_button top-margin" ng-click="searchWord(searchText)">搜索</button>
+            </br>
+            </br>
+            <ion-spinner icon="bubbles" class="spinner-balanced" ng-show="showProgress"></ion-spinner>
 		</div>
+        
+        <div ng-show="hasResult">
+            <p>英音:{{ukphonetic}}</p>
+            <p>美音:{{usphonetic}}</p>
+            <p>{{searchResult}}</p>
+        </div>
+            
+
 		</ion-content>
 	</ion-view>
 	

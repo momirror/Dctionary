@@ -122,7 +122,6 @@ return "help.html";
          
             var exec = cordova.require('cordova/exec');
             exec(function(data){
-//                 alert("aaaa");
                  defer.resolve(data);
                  },function(){
                  alert("error");
@@ -147,59 +146,65 @@ return "help.html";
 
 .controller("listController",function($scope,$rootScope,$http,parseData,getAllWord)
 {
-//       parseData.parseJson("haha");
-            
+//         $scope.showProgress = "true";
+//            $scope.NoInput = true;
             getAllWord.getAllData().then(function(data){
                                          var wordDatas = data;
-                                         
-//                                         alert(data.length);
-                                         
-//                                         for(i = 0;i < data.length;i++)
-//                                         {
-//                                         
-//                                         var word = data[i];
-//                                            alert(word.word);
-//                                         
-//                                         }
-                                         
+                                      
                                          $scope.words = data;
                                          });
-            
-//	var words = new Array();
-//	
-//	for(i = 1;i < 101;i++)
-//	{
-//		words.push(i);
-//	}
-//	
-//	 $scope.words = words;
 	 
 	 $scope.items=["导入生词","帮助"];
 	 
 	 $rootScope.nav_title="单词本";
 	 
 	 $scope.show="true";
+            
+     $scope.clear=function()
+    {
+            alert("clear");
+        $scope.searchText="";
+    }
 	 
 	 $scope.searchWord=function(word)
 	 {
         if(word == undefined)
         {
-            $scope.NoInput = "false";
+            $scope.NoInput = true;
             
             return;
         }
         else
         {
-            $scope.NoInput = "true";
+            $scope.showProgress = true;
+            $scope.NoInput = false;
+
         }
             
 	 	var url = "http://fanyi.youdao.com/openapi.do?keyfrom=momirror&key=357484575&type=data&doctype=json&version=1.1&q=" + word;
 	 	 $http.get(url)
     .success(function(response) {
+             
+             $scope.showProgress = false;
              parseData.parseJson(response);
-//             alert(basic);
-//             httpParse.parse(data);
-    	$scope.searchText = response.transiation[0];})
+             
+             var basic = response.basic;
+             
+//             $scope.usphonetic = basic.us-phonetic;
+//             $scope.ukphonetic = basic.uk-phonetic;
+             $scope.usphonetic = basic.phonetic;
+             $scope.ukphonetic = basic.phonetic;
+             $scope.searchResult = basic.explains;
+             $scope.hasResult = true;
+             
+             getAllWord.getAllData().then(function(data){
+                                          var wordDatas = data;
+                                          
+                                          $scope.words = data;
+                                          });
+
+    	
+             })
     .error(function(e){
  alert('请求失败了');
  });
