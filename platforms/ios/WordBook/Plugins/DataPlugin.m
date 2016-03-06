@@ -33,13 +33,20 @@
 - (void)getAllData:(CDVInvokedUrlCommand *)command
 {
     
-    CDVPluginResult* result = nil;
     
-    NSArray * datas = [[DataManagement instance] queryAllData];
-
-    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsArray:datas];
     
-    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+    [self.commandDelegate runInBackground:^{
+        
+        CDVPluginResult* result = nil;
+        
+        NSArray * datas = [[DataManagement instance] queryAllData];
+        
+        result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsArray:datas];
+        
+        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+    }];
+    
+    
 }
 
 @end
