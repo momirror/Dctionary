@@ -55,12 +55,10 @@ myApp.config(function($stateProvider,$urlRouterProvider)
         views: {
         'set-tab': {
           templateUrl: "set.html",
-           controller:function($scope,$stateParams){
-    	$scope.index = $stateParams.index;
-    	
-    	
-//  	alert("haha");
-    }
+           controller:'setController as SVM'
+//          resolve: {
+//          currentPosition: currentPositionResolver()
+//          }
         }
       },
        
@@ -154,7 +152,7 @@ return "help.html";
                                          $scope.words = data;
                                          });
 	 
-	 $scope.items=["导入生词","帮助"];
+	 
 	 
 	 $rootScope.nav_title="单词本";
 	 
@@ -209,13 +207,6 @@ return "help.html";
  alert('请求失败了');
  });
 	 };
-})
-.controller("setController",function($rootScope,$scope,$state){
-	$scope.click=function(index)
-	{
-		  $state.go("tabs/help/0");
-	};
-	$rootScope.nav_title ="设置";
 })
 .controller("helpController",function($scope,$state){
 	
