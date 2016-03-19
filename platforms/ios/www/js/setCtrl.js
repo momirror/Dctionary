@@ -1,14 +1,19 @@
-angular
-    .module('dicApp')
-    .controller('setController', setController);
+angular.module('dicApp').controller('setController', setController);
     
-    setController.inject = [
+setController.inject = [
                           '$rootScope',
                           '$scope',
-                          'ionic',
+                          'currentData',
                           ];
     
-    function setController($rootScope, $state,$scope) {
+function setController($rootScope,$state,$scope,currentData) {
 
-        $scope.items=["导入生词","帮助"];
-    }
+        
+//        $scope.items=datas;
+        var arr = ["导入生词","帮助"];
+        $scope.items = arr;
+//        alert("setCtrl+ "+currentData+" "+ arr);
+//        $scope.items = currentData;
+//        alert($scope.items);
+//        alert(currentData[0]);
+}

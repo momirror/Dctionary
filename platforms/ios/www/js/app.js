@@ -55,10 +55,11 @@ myApp.config(function($stateProvider,$urlRouterProvider)
         views: {
         'set-tab': {
           templateUrl: "set.html",
-           controller:'setController as SVM'
-//          resolve: {
-//          currentPosition: currentPositionResolver()
-//          }
+           controller:'setController',
+          resolve: {
+          currentData:setItems()
+
+          }
         }
       },
        
@@ -91,7 +92,7 @@ return "help.html";
   },
            controller:function($rootScope, $scope,$stateParams,simpleObj){
     	$scope.index = $stateParams.index;
-//    	alert(simpleObj);
+    	alert(simpleObj);
 //  	alert($scope.nav_title);
 
     }
@@ -99,6 +100,24 @@ return "help.html";
       },
        
     });
+
+    function setItems()
+    {
+        return ['$q',function($q)
+        {
+            var dfd = $q.defer();
+
+            dfd.resolve(["导入生词","帮助"]);
+
+            alert("setItems defer");
+
+            return dfd.promise;
+
+
+//          return ["导入生词","帮助"];
+        }]
+
+    };
     
     })
 
