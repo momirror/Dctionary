@@ -52,16 +52,18 @@ myApp.config(function($stateProvider,$urlRouterProvider)
     })
    .state("tabs.Set",{
         url:"/set",
+
         views: {
         'set-tab': {
           templateUrl: "set.html",
            controller:'setController',
-          resolve: {
-          currentData:setItems()
-
-          }
+            resolve:
+        {
+            currentData:setItems()
+        }
         }
       },
+
        
     })
     .state("tabs.setDetail",{
@@ -92,7 +94,7 @@ return "help.html";
   },
            controller:function($rootScope, $scope,$stateParams,simpleObj){
     	$scope.index = $stateParams.index;
-    	alert(simpleObj);
+    	//alert(simpleObj);
 //  	alert($scope.nav_title);
 
     }
@@ -109,10 +111,7 @@ return "help.html";
 
             dfd.resolve(["导入生词","帮助"]);
 
-            alert("setItems defer");
-
             return dfd.promise;
-
 
 //          return ["导入生词","帮助"];
         }]
@@ -220,7 +219,7 @@ return "help.html";
                                           $scope.words = data;
                                           });
 
-    	
+
              })
     .error(function(e){
  alert('请求失败了');
