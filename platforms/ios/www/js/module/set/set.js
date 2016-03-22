@@ -11,7 +11,7 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
             parent:'home',
             url:"/set",
             views: {
-                'list-tab': {
+                'set-tab': {
                     templateUrl: "js/module/set/set.html",
                     controller:'setController',
                     resolve:
