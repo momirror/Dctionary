@@ -7,5 +7,5 @@ SearchController.inject = [
 
 function SearchController($rootScope,$scope) {
 
-    alert("SearchController");
+    //alert("SearchController");
 }

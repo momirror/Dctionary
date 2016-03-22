@@ -10,5 +10,5 @@ TabsController.inject = [
 ];
 
 function TabsController($rootScope,$scope) {
-   alert("TabsController");
+   //alert("TabsController");
 }

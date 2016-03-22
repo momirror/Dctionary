@@ -4,14 +4,14 @@
 var myApp = angular.module("dicApp");
 myApp.config(function($stateProvider,$urlRouterProvider) {
 
-    $urlRouterProvider.when("","/home/set");
+    //$urlRouterProvider.when("","/home/set");
 
     $stateProvider
         .state("set",{
             parent:'home',
             url:"/set",
             views: {
-                'set-tab': {
+                'list-tab': {
                     templateUrl: "js/module/set/set.html",
                     controller:'setController',
                     resolve:
@@ -26,7 +26,7 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
     {
         return ['$q',function($q)
         {
-            alert("setItems");
+            //alert("setItems");
             var dfd = $q.defer();
             dfd.resolve(["导入生词","帮助"]);
             return dfd.promise;

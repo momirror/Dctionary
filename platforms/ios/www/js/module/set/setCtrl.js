@@ -1,11 +1,11 @@
 angular.module('dicApp').controller('setController', setController);
-    
+
 setController.inject = [
-                          '$rootScope',
-                          '$scope',
-                          'currentData',
-                          ];
-    
+    '$rootScope',
+    '$scope',
+    'currentData',
+];
+
 function setController($rootScope,$state,$scope,currentData) {
 
     alert("setController");

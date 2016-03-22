@@ -7,14 +7,11 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
     $stateProvider
         .state('home', {
             url:'/home',
-            templateUrl: 'tabs.html',
+            templateUrl: 'js/module/tabs/tabs.html',
             abstract: true,
             controller:'TabsController'
 
         });
-
-
-
 });
 
 //var myApp = angular.module("dicApp",['ionic'])
