@@ -7,9 +7,10 @@ angular.module('dicApp').controller('ListController', ListController);
 ListController.inject = [
     '$rootScope',
     '$scope',
+    'getAllWord',
 ];
 
-function ListController($scope,$rootScope) {
+function ListController($scope,$rootScope,getAllWord) {
 
     alert("ListController");
 //    getAllWord.getAllData().then(function(data){
