@@ -8,5 +8,6 @@ setController.inject = [
     
 function setController($rootScope,$state,$scope,currentData) {
 
+    alert("setController");
     $scope.items = currentData;
 }

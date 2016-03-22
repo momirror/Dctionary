@@ -9,6 +9,6 @@ TabsController.inject = [
     '$scope',
 ];
 
-function TabsController($rootScope,$state,$scope) {
+function TabsController($rootScope,$scope) {
    alert("TabsController");
 }

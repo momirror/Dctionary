@@ -1,14 +1,18 @@
 /**
  * Created by msp on 2016/3/21.
  */
-var myApp = angular.module("dicApp",['ionic']);
+var myApp = angular.module("dicApp");
 myApp.config(function($stateProvider,$urlRouterProvider) {
+
+    $urlRouterProvider.when("","/home/set");
+
     $stateProvider
-        .state("tabs.Set",{
+        .state("set",{
+            parent:'home',
             url:"/set",
             views: {
                 'set-tab': {
-                    templateUrl: "set.html",
+                    templateUrl: "js/module/set/set.html",
                     controller:'setController',
                     resolve:
                     {
@@ -22,6 +26,7 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
     {
         return ['$q',function($q)
         {
+            alert("setItems");
             var dfd = $q.defer();
             dfd.resolve(["导入生词","帮助"]);
             return dfd.promise;
