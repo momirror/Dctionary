@@ -14,7 +14,7 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
             views: {
                 'search-tab': {
                     templateUrl: "feature/module/search/search.html",
-                    controller:'SearchController',
+                    controller:'SearchController as vmm',
 
                 }
             }
