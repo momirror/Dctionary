@@ -12,7 +12,7 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
             url:"/list",
             views: {
                 'list-tab': {
-                    templateUrl: "js/module/list/list.html",
+                    templateUrl: "feature/module/list/list.html",
                     controller:'ListController',
 
                 }

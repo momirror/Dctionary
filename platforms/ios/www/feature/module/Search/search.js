@@ -13,7 +13,7 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
             url:"/search",
             views: {
                 'search-tab': {
-                    templateUrl: "js/module/search/search.html",
+                    templateUrl: "feature/module/search/search.html",
                     controller:'SearchController',
 
                 }
@@ -24,7 +24,6 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
     {
         this.parseJson=function(jsonData)
         {
-            alert("parse data");
             var exec = cordova.require('cordova/exec');
             exec(null,null,"DataPlugin","parseData",[jsonData]);
         }

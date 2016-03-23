@@ -8,15 +8,17 @@ SearchController.inject = [
 
 ];
 
-function SearchController($rootScope,$scope,$http,parseData) {
+function SearchController($rootScope, $scope, $http, parseData) {
 
 
-//     $scope.clear=function()
-//    {
-//            alert("clear");
-//        $scope.searchText="";
-//    }
-//
+    $scope.clear = function () {
+        alert($scope.testText);
+    }
+
+    $scope.testText = "aaaa";
+
+    //alert($scope.searchText);
+
     $scope.searchWord = function (word) {
         if (word == undefined) {
             $scope.NoInput = true;
