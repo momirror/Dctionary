@@ -4,8 +4,6 @@
 var myApp = angular.module("dicApp");
 myApp.config(function($stateProvider,$urlRouterProvider) {
 
-    //$urlRouterProvider.when("","/home/list");
-
     $stateProvider
         .state("list",{
             parent:'home',
@@ -13,16 +11,13 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
             views: {
                 'list-tab': {
                     templateUrl: "feature/module/list/list.html",
-                    controller:'ListController',
-
+                    controller:'ListController as vm',
                 }
             }
         });
 })
     .service("getAllWord",function($q)
     {
-
-
         this.getAllData=function()
         {
             var defer = $q.defer();
@@ -33,10 +28,6 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
             },function(){
                 alert("error");
             },"DataPlugin","getAllData",[]);
-
-
-
-
 
             return defer.promise;
         }

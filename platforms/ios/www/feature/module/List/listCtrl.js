@@ -12,17 +12,9 @@ ListController.inject = [
 
 function ListController($scope,$rootScope,getAllWord) {
 
+    var vm = this;
     getAllWord.getAllData().then(function(data){
 
-        var wordDatas = data;
-        $rootScope.words = data;
+       vm.words = data;
     });
-
-//     $scope.clear=function()
-//    {
-//            alert("clear");
-//        $scope.searchText="";
-//    }
-//
-
 };

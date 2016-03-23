@@ -3,16 +3,13 @@
         <div class="list list-inset h-center">
             <div class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
-                <input type="text" placeholder="搜索"  ng-model="searchText">
-                <p>{{searchText}}</p>
+                <input type="text" placeholder="搜索"  ng-model="vm.searchText">
                 <button class="button button-clear icon ion-ios-close-empty right-margin-10"
-                        ng-click="clearInput()"></button>
+                        ng-click="vm.clearInput()"></button>
             </div>
 
             <p class="error top-margin" ng-show="NoInput">请先输入一个英文单词</p>
-
-            <input type="text" placeholder="搜索" ng-model="testText">
-            <button class="search_button top-margin" ng-click="searchWord(searchText)">搜索</button>
+            <button class="search_button top-margin" ng-click="vm.searchWord()">搜索</button>
             </br>
             </br>
             <ion-spinner icon="bubbles" class="spinner-balanced" ng-show="showProgress"></ion-spinner>
@@ -23,11 +20,6 @@
             <p>美音:{{usphonetic}}</p>
             <p>{{searchResult}}</p>
         </div>
-
-        <input type="text" placeholder="搜索"  ng-model="vmm.test">
-        <p>{{vmm.test}}</p>
-        <button ng-click="vmm.showValue()"></button>
-
 
     </ion-content>
 </ion-view>
