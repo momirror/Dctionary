@@ -5,7 +5,7 @@
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="text" placeholder="搜索"  ng-model="vm.searchText">
                 <button class="button button-clear icon ion-ios-close-empty right-margin-10"
-                        ng-click="vm.clearInput()"></button>
+                    ng-click="vm.clearInput()" ng-show="vm.bClear"></button>
             </div>
 
             <p class="error top-margin" ng-show="NoInput">请先输入一个英文单词</p>
@@ -15,11 +15,12 @@
             <ion-spinner icon="bubbles" class="spinner-balanced" ng-show="showProgress"></ion-spinner>
         </div>
 
-        <div ng-show="hasResult">
-            <p>英音:{{ukphonetic}}</p>
-            <p>美音:{{usphonetic}}</p>
-            <p>{{searchResult}}</p>
+        <div ng-show="vm.hasResult">
+            <p>英音:{{vm.ukphonetic}}</p>
+            <p>美音:{{vm.usphonetic}}</p>
+            <p>{{vm.searchResult}}</p>
         </div>
+        <p ng-show="(!vm.hasResult)&&(vm.searchText.$dirty)">没有查询结果</p>
 
     </ion-content>
 </ion-view>

@@ -11,7 +11,7 @@ ListController.inject = [
 ];
 
 function WordDetailController($scope,$rootScope,$stateParams) {
-    $rootScope.wordIndex =  $stateParams.index;
-
-
+    var vm = this;
+    vm.wordIndex =  $stateParams.index;
+    
 };

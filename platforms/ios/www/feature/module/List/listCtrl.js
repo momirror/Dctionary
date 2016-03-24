@@ -14,7 +14,7 @@ function ListController($scope,$rootScope,getAllWord) {
 
     var vm = this;
     getAllWord.getAllData().then(function(data){
-
-       vm.words = data;
+//                                 alert(data);
+       $rootScope.words = data;
     });
 };

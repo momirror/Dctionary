@@ -5,27 +5,30 @@ SearchController.inject = [
     '$scope',
     '$http',
     'parseData',
+    'getAllWord'
 
 ];
-function SearchController($rootScope, $scope, $http, parseData) {
+function SearchController($rootScope, $scope, $http, parseData,getAllWord) {
 
     var vm = this;
 
     vm.clearInput = function () {
         vm.searchText = "";
+        vm.bClear = false;
     };
 
     vm.searchWord = function () {
 
         var word = vm.searchText;
         if (word == undefined) {
-            $scope.NoInput = true;
+            vm.NoInput = true;
 
             return;
         }
         else {
-            $scope.showProgress = true;
-            $scope.NoInput = false;
+            vm.showProgress = true;
+            vm.NoInput = false;
+            vm.hasResult = false;
 
         }
 
@@ -36,36 +39,45 @@ function SearchController($rootScope, $scope, $http, parseData) {
                 $scope.showProgress = false;
                 parseData.parseJson(response);
 
+                
                 var basic = response.basic;
+                vm.hasResult = (basic != undefined);
+                     
+                if(basic != undefined)
+                {
+                     alert(basic);
+                    //             vm.usphonetic = basic.us-phonetic;
+//             vm.ukphonetic = basic.uk-phonetic;
+                    vm.usphonetic = basic.phonetic;
+                    vm.ukphonetic = basic.phonetic;
+                    vm.searchResult = basic.explains;
 
-//             $scope.usphonetic = basic.us-phonetic;
-//             $scope.ukphonetic = basic.uk-phonetic;
-                $scope.usphonetic = basic.phonetic;
-                $scope.ukphonetic = basic.phonetic;
-                $scope.searchResult = basic.explains;
-                $scope.hasResult = true;
 
-                getAllWord.getAllData().then(function (data) {
-                    var wordDatas = data;
+                    getAllWord.getAllData().then(function (data) {
+                        var wordDatas = data;
 
-                    $scope.words = data;
-                });
+
+                        $rootScope.words = data;
+                    });
+
+                };
+
 
 
             })
             .error(function (e) {
                 alert('请求失败了');
-                $scope.showProgress = false;
+                vm.showProgress = false;
             });
 
     }
 
 
-
-            vm.showValue = function(){
-                alert(vm.searchText);
-            }
-
+    $scope.$watch("vm.searchText",function(newValue){
+               
+        vm.bClear = (newValue != undefined && newValue != "");
+                
+    });
 
 
 };

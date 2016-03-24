@@ -13,7 +13,7 @@ myApp.config(function($stateProvider,$urlRouterProvider) {
             views: {
                 'list-tab': {
                     templateUrl: "feature/module/list/wordDetail/wordDetail.html",
-                    controller:'WordDetailController',
+                    controller:'WordDetailController as vm',
 
                 }
             }
