@@ -15,6 +15,7 @@ function SearchController($rootScope, $scope, $http, parseData,getAllWord) {
     vm.clearInput = function () {
         vm.searchText = "";
         vm.bClear = false;
+        vm.hasResult = false;
     };
 
     vm.searchWord = function () {
@@ -36,16 +37,17 @@ function SearchController($rootScope, $scope, $http, parseData,getAllWord) {
         $http.get(url)
             .success(function (response) {
 
-                $scope.showProgress = false;
+                vm.showProgress = false;
                 parseData.parseJson(response);
 
                 
                 var basic = response.basic;
                 vm.hasResult = (basic != undefined);
+                vm.bSearchFail = true;
                      
                 if(basic != undefined)
                 {
-                     alert(basic);
+                    vm.bSearchFail = false;
                     //             vm.usphonetic = basic.us-phonetic;
 //             vm.ukphonetic = basic.uk-phonetic;
                     vm.usphonetic = basic.phonetic;
