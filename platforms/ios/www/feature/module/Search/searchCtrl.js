@@ -64,7 +64,7 @@ function SearchController($rootScope, $scope, $http, parseData,getAllWord) {
 
                 };
 
-
+                     alert("test");
 
             })
             .error(function (e) {
